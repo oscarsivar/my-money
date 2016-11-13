@@ -1,0 +1,30 @@
+{
+  "name": "my-money",
+  "version": "1.0.0",
+  "description": "my-money",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "cd src && webpack",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "babel-loader": "^5.3.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "jade": "^1.11.0",
+    "material-ui": "^0.16.1",
+    "mongoose": "^4.6.7",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-tap-event-plugin": "^1.0.0",
+    "webpack": "^1.13.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oscarsivar/my-money"
+  },
+  "author": "Oscar Elias",
+  "license": "ISC"
+}

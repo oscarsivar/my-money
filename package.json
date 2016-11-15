@@ -4,7 +4,7 @@
   "description": "my-money",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "cd src && webpack",
+    "build": "cd src && webpack --progress --colors --watch",
     "start": "node server.js"
   },
   "dependencies": {

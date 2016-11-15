@@ -1,13 +1,25 @@
 import React from 'react';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import FlatButton from 'material-ui/FlatButton';
+
+function handleTouchTap() {
+  alert('onTouchTap triggered on the title component');
+}
+
+const styles = {
+  title: {
+    cursor: 'pointer',
+  },
+};
+
 
 const Header = () => (
-  <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-    <AppBar title="My AppBar" />
-  </MuiThemeProvider>
+    <AppBar 
+        title={<span style={styles.title}>My money</span>}
+    	onTitleTouchTap={handleTouchTap}
+        iconElementRight={<FlatButton label="Username" />}
+        />
 );
 
 export default Header;

@@ -47,8 +47,7 @@ jspm_packages
 .yarn-integrity
 
 #Packages minified
-src/client.min.js
-src/client.min.js.map
+bundle.js
 
 
 #Idea

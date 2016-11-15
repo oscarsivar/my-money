@@ -30,5 +30,17 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+app.get('/payment', function (req, res) {
+    res.render('payment');
+});
+
+app.get('/spend', function (req, res) {
+    res.render('spend');
+});
+
+app.get('/income', function (req, res) {
+    res.render('index');
+});
+
 
 module.exports = app;

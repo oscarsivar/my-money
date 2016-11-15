@@ -37,25 +37,28 @@ const tilesData = [
   }
 ];
 
-const List = () => (
-  <div style={styles.root}>
-    <GridList
-      cellHeight={180}
-      style={styles.gridList}
-    >
-      <Subheader>December</Subheader>
-      {tilesData.map((tile) => (
-        <GridTile
-          key={tile.img}
-          title={tile.title}
-          subtitle={<b>{tile.author}</b>}
-          
-        >
-          <img src={tile.img} />
-        </GridTile>
-      ))}
-    </GridList>
-  </div>
+
+const List = () => (  
+    <div style={styles.root}>
+      <GridList
+        cellHeight={180}
+        style={styles.gridList}      
+      >
+        <Subheader></Subheader>
+        {tilesData.map((tile) => (
+          <a href={tile.url}>
+            <GridTile
+              key={tile.img}
+              title={tile.title}
+              subtitle={<b>{tile.author}</b>}
+              
+            >
+              <img src={tile.img} />
+            </GridTile>
+          </a>
+        ))}
+      </GridList>
+    </div>  
 );
 
 

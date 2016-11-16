@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost:27017/mymoney', function(err, res) {
 });
 
 const app = express();
-
+const router = express.Router();
 // view engine setup
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'jade');
@@ -26,6 +26,8 @@ app.use(expressSession({
 }));
 app.use(express.static(path.join(__dirname, 'public')))
 
+const Income = require('./models/incomes')(mongoose);
+
 app.get('/', function (req, res) {
     res.render('index');
 });
@@ -39,8 +41,14 @@ app.get('/spend', function (req, res) {
 });
 
 app.get('/income', function (req, res) {
-    res.render('index');
+	Income.find({}, function(err, income){
+		res.render('index', {
+			income: income
+		});
+	});
+    
 });
+
 
 
 module.exports = app;

@@ -15,12 +15,20 @@ const styles = {
   gridList: {
     overflowY: 'auto',
   },
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  }
 };
 const style = {
   margin: 20,
   textAlign: 'center',
   display: 'inline-block',
 };
+
+
+
 
 export default class AddIncome extends React.Component {
  
@@ -62,7 +70,7 @@ export default class AddIncome extends React.Component {
         		style={styles.gridList}      
       		>
         	<Subheader></Subheader>
-      		<div>
+      		<div style={styles.root}>
 		        <FloatingActionButton style={style} 
 		        onClick={this.handleOpen.bind(this)}>
 		          <ContentAdd />
@@ -71,7 +79,7 @@ export default class AddIncome extends React.Component {
       	</GridList> 
 
         <Dialog
-          title="new income"
+          title="New income"
           actions={actions}
           modal={false}
           open={this.state.open}

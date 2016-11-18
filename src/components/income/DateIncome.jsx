@@ -1,14 +1,25 @@
 import React from 'react';
-import DatePicker from 'material-ui/DatePicker';
+import TimePicker from 'material-ui/TimePicker';
 
-/**
- * The Date Picker defaults to a portrait dialog. The `mode` property can be set to `landscape`.
- * You can also disable the Dialog passing `true` to the `disabled` property.
- */
-const DateIncome = () => (
+const TimePickerExampleSimple = () => (
   <div>
-    <DatePicker hintText="Portrait Dialog" />
+    <TimePicker
+      hintText="12hr Format"
+    />
+    <TimePicker
+      hintText="12hr Format with auto ok"
+      autoOk={true}
+    />
+    <TimePicker
+      format="24hr"
+      hintText="24hr Format"
+    />
+    <TimePicker
+      disabled={true}
+      format="24hr"
+      hintText="Disabled TimePicker"
+    />
   </div>
 );
 
-export default DateIncome;
+export default TimePickerExampleSimple;

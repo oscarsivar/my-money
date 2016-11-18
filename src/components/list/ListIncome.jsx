@@ -8,7 +8,6 @@ import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 
 
-
 const style = {
   margin: 20,
   textAlign: 'center',
@@ -26,21 +25,23 @@ const styles = {
 
 const ListIncome = () => (
 
-  <div style={styles.root}>  
-    <Paper zDepth={2}>
-        <List>
-           <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
-           <Divider />
-           <ListItem primaryText="Starred" leftIcon={<ActionGrade />} />
-           <Divider />
-           <ListItem primaryText="Sent mail" leftIcon={<ContentSend />} />
-           <Divider />
-           <ListItem primaryText="Drafts" leftIcon={<ContentDrafts />} />
-           <Divider />
-          <ListItem primaryText="Inbox" leftIcon={<ContentInbox />} />
-        </List>
+  <div style={styles.root}>
+    <Paper zDepth={2} style={{minWidth: 400}}>
+      <Divider inset={true} />
+          <List>
+            <ListItem style={{}}
+              leftIcon={<i  style={{color: "#EEEEEE"}} className="material-icons" >attach_money</i>}
+              primaryText="Salario"
+              secondaryText="$505"
+            />
+            <ListItem style={{}}
+              insetChildren={true}
+              primaryText="Alquiler"
+              secondaryText="$200"
+            />
+          </List>
     </Paper>
-</div>    
+</div>
 
 );
 

@@ -7,16 +7,16 @@ import Subheader from 'material-ui/Subheader';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import TextField from 'material-ui/TextField';
-import DateIncome from 'material-ui/DatePicker';
+import TimePickerExampleSimple from './DateIncome.jsx';
 
 
 
 const styles = {
   gridList: {
-    overflowY: 'auto',
+    overflowY: 'auto'
   },
   root: {
-    display: 'flex',
+    display: 'inline-block',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
   }
@@ -31,7 +31,7 @@ const style = {
 
 
 export default class AddIncome extends React.Component {
- 
+
  constructor(props) {
     super(props);
 
@@ -67,16 +67,24 @@ export default class AddIncome extends React.Component {
       <div>
           <GridList
         		cellHeight={180}
-        		style={styles.gridList}      
+        		style={styles.gridList}
       		>
-        	<Subheader></Subheader>
-      		<div style={styles.root}>
-		        <FloatingActionButton style={style} 
-		        onClick={this.handleOpen.bind(this)}>
-		          <ContentAdd />
-		        </FloatingActionButton>
-     		</div>
-      	</GridList> 
+          	<Subheader></Subheader>
+            <div id='add-income'>
+              <div style={{display: 'inline-block'}}>
+                <h2 style={{marginRight:24, color: 'gray', fontWeight: 100, fontSize: 36, display: 'inline-block'}}>Total</h2>
+                <p style={{marginRight:24, color: 'gray', fontWeight: 100, fontSize: 36, display: 'inline-block'}}> 0.00</p>
+              </div>
+          		<div style={styles.root}>
+      		        <FloatingActionButton style={style}
+      		        onClick={this.handleOpen.bind(this)}>
+      		            <ContentAdd />
+      		        </FloatingActionButton>
+         		   </div>
+            </div>
+
+
+      	</GridList>
 
         <Dialog
           title="New income"
@@ -85,17 +93,19 @@ export default class AddIncome extends React.Component {
           open={this.state.open}
           onRequestClose={this.handleClose.bind(this)}
         >
-		    <TextField id="conceptIncome"
-		      hintText="Type the concept"
-		      floatingLabelText="Concept"
-		    /><br />
-		    <TextField id="amountIncome"
-		      hintText="Type the amount"
-		      floatingLabelText="Amount"
-		    /><br /><br />
-		    <DateIncome />
+
+  		    <TextField  id="conceptIncome"
+  		      hintText="Type the concept"
+  		      floatingLabelText="Concept"
+  		    /><br />
+  		    <TextField id="amountIncome"
+  		      hintText="Type the amount"
+  		      floatingLabelText="Amount"
+  		    /><br /><br />
+  		    <TimePickerExampleSimple />
+
         </Dialog>
       </div>
     );
   }
-}     
+}

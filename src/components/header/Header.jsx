@@ -16,9 +16,9 @@ const styles = {
 
 const Header = () => (
     <AppBar 
-        title={<span style={styles.title}>My money</span>}
+        title={<a style={{textDecoration: 'none', color: 'white'}} href='/'><span style={styles.title}>My money</span></a>}
     	onTitleTouchTap={handleTouchTap}
-        iconElementRight={<FlatButton label="Username" />}
+        iconElementRight={<FlatButton style={{color: 'white'}}label="Username" />}
         />
 );
 

@@ -42,11 +42,10 @@ app.get('/spend', function (req, res) {
 
 app.get('/income', function (req, res) {
 	Income.find({}, function(err, income){
-		res.render('index', {
+		res.render('income', {
 			income: income
 		});
 	});
-    
 });
 
 

@@ -22,28 +22,45 @@ const styles = {
   }
 };
 
+const incomesData = [
+    {
+        concept: 'Salario',
+        amount: 500,
+        date: '30-01-16'
+    },
+    {
+        concept: 'Alquiler',
+        amount: 200,
+        date: '15-01-16'
+    },
+    {
+        concept: 'Deuda',
+        amount: 20,
+        date: '05-01-16'
+    }
+];
 
 const ListIncome = () => (
 
   <div style={styles.root}>
     <Paper zDepth={2} style={{minWidth: 400}}>
-      <Divider inset={true} />
-          <List>
-            <ListItem style={{}}
-              leftIcon={<i  style={{color: "#EEEEEE"}} className="material-icons" >attach_money</i>}
-              primaryText="Salario"
-              secondaryText="$505"
-            />
-            <ListItem style={{}}
-              insetChildren={true}
-              primaryText="Alquiler"
-              secondaryText="$200"
-            />
-          </List>
+        <Divider inset={true} />
+        <List>
+            {incomesData.map((tile) => (
+
+                    <ListItem style={{}}
+                              insetChildren={true}
+                              primaryText={tile.concept}
+                              secondaryText={tile.amount}
+                    />
+
+            ))}
+
+        </List>
     </Paper>
+
 </div>
 
 );
-
 
 export default ListIncome;

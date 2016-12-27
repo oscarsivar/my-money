@@ -22,23 +22,7 @@ const styles = {
   }
 };
 
-const incomesData = [
-    {
-        concept: 'Salario',
-        amount: 500,
-        date: '30-01-16'
-    },
-    {
-        concept: 'Alquiler',
-        amount: 200,
-        date: '15-01-16'
-    },
-    {
-        concept: 'Deuda',
-        amount: 20,
-        date: '05-01-16'
-    }
-];
+var incomesList = JSON.parse(document.getElementById('incomesData').innerHTML);
 
 const ListIncome = () => (
 
@@ -46,7 +30,7 @@ const ListIncome = () => (
     <Paper zDepth={2} style={{minWidth: 400}}>
         <Divider inset={true} />
         <List>
-            {incomesData.map((tile) => (
+            {incomesList.map((tile) => (
 
                     <ListItem style={{}}
                               insetChildren={true}

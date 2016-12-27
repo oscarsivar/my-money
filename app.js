@@ -43,7 +43,7 @@ app.get('/spend', function (req, res) {
 app.get('/income', function (req, res) {
 	Income.find({}, function(err, income){
 		res.render('income', {
-			income: income
+			income: JSON.stringify(income)
 		});
 	});
 });

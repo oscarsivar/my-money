@@ -28,6 +28,16 @@ const style = {
 };
 
 
+if(document.getElementById("incomesData") != null){
+    var incomesList = JSON.parse(document.getElementById('incomesData').innerHTML);
+    var total = 0.00;
+
+    incomesList.map((tile) => (
+        total += tile.amount
+    ));
+}
+
+
 
 
 export default class AddIncome extends React.Component {
@@ -60,7 +70,7 @@ export default class AddIncome extends React.Component {
             <div id='add-income'>
               <div style={{display: 'inline-block'}}>
                 <h2 style={{marginRight:24, color: 'gray', fontWeight: 100, fontSize: 36, display: 'inline-block'}}>Total</h2>
-                <p style={{marginRight:24, color: 'gray', fontWeight: 100, fontSize: 36, display: 'inline-block'}}> 0.00</p>
+                <p style={{marginRight:24, color: 'gray', fontWeight: 100, fontSize: 36, display: 'inline-block'}}> {total}</p>
               </div>
           		<div style={styles.root}>
       		        <FloatingActionButton style={style}

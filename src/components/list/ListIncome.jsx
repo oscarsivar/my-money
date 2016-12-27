@@ -22,7 +22,9 @@ const styles = {
   }
 };
 
-var incomesList = JSON.parse(document.getElementById('incomesData').innerHTML);
+if(document.getElementById("incomesData") != null){
+    var incomesList = JSON.parse(document.getElementById('incomesData').innerHTML);
+}
 
 const ListIncome = () => (
 

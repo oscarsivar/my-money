@@ -49,19 +49,6 @@ export default class AddIncome extends React.Component {
   };
 
   render() {
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onClick={this.handleClose.bind(this)}
-      />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        keyboardFocused={true}
-        onTouchTap={this.handleClose}
-      />,
-    ];
 
     return (
       <div>
@@ -88,21 +75,40 @@ export default class AddIncome extends React.Component {
 
         <Dialog
           title="New income"
-          actions={actions}
           modal={false}
           open={this.state.open}
           onRequestClose={this.handleClose.bind(this)}
         >
+            <form id="main-login" action ="/income" method="post">
 
-  		    <TextField  id="conceptIncome"
-  		      hintText="Type the concept"
-  		      floatingLabelText="Concept"
-  		    /><br />
-  		    <TextField id="amountIncome"
-  		      hintText="Type the amount"
-  		      floatingLabelText="Amount"
-  		    /><br /><br />
-  		    <TimePickerExampleSimple />
+                <TextField  id="conceptIncome"
+                  hintText="Type the concept"
+                  name="concept"
+                  floatingLabelText="Concept"
+                /><br />
+                <TextField id="amountIncome"
+                  hintText="Type the amount"
+                  name="amount"
+                  floatingLabelText="Amount"
+                /><br /><br />
+
+                <FlatButton
+                    label="Cancel"
+                    primary={true}
+                    onClick={this.handleClose.bind(this)}
+                />
+
+                <FlatButton
+                    type="submit"
+                    label="Add"
+                    primary={true}
+                    keyboardFocused={true}
+                    onTouchTap={this.handleClose}
+                />
+
+            </form>
+
+
 
         </Dialog>
       </div>

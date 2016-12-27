@@ -24,7 +24,7 @@ app.use(expressSession({
   resave: false,
   saveUninitialized: false
 }));
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
 const Income = require('./models/incomes')(mongoose);
 
@@ -48,6 +48,15 @@ app.get('/income', function (req, res) {
 	});
 });
 
+app.post('/income', function (req, res) {
+    new Income({
+        concept  : req.body.concept,
+        amount   : req.body.amount
+    }).save(function(err, doc){
+        if(err) res.json(err);
+        else res.redirect("/income");
+    });
 
+});
 
 module.exports = app;
